@@ -1,11 +1,9 @@
-import { Component } from "react";
-import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
-import AntD from './AntD';
-import SimpleForm from './SimpleForm'; 
+import { Component } from "react";  
 
 class Temp extends Component{
+     
     render(){
-        return <h2>Temp  :::: File</h2>
+        return <h2>{this.props.id}  Temp   :::: File</h2>
     }
 }
 

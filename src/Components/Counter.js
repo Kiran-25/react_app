@@ -9,16 +9,25 @@ class Counter extends Component{
         };
     }
 
-    increment = () =>{
-        console.log(this)
+    incrementByTwo = () =>{
         this.setState({
-            count: this.state.count+1,
-        })
+            count:this.state.count+1,
+          },() => {
+                this.setState({
+                count:this.state.count+1, 
+              })
+          }); 
+    }
+
+    increment = () =>{
+      this.setState({
+        count:this.state.count+1,
+      }); 
     }
 
     decrement = () =>{
         this.setState({
-            count:this.state.count-1,
+            count: this.state.count !=0 ? this.state.count-1: this.state.count,
         })
     }
 
@@ -27,6 +36,7 @@ class Counter extends Component{
             <div>
             <h5>Counter Value is : {this.state.count}</h5>
             <button onClick={this.increment}>Increment Counter</button>
+            <button onClick={this.incrementByTwo}>Increment Counter by 2</button>
             <button onClick={this.decrement}>Decrement Counter</button>
             </div>
         )

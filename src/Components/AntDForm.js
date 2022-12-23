@@ -27,13 +27,14 @@ class AntDForm extends Component {
     return (
       <>
         <Row>
+        <Col xs={24}>
           <Form
             name="basic"
             labelCol={{
               span: 8,
             }}
             wrapperCol={{
-              span: 16,
+              span: 8,
             }}
             initialValues={{
               remember: true,
@@ -46,7 +47,7 @@ class AntDForm extends Component {
               <h4>AntD Forms</h4>
             </Col>
 
-            <Col xs={24}>
+            
               <Form.Item label="Radio">
                 <Radio.Group>
                   <Radio value="apple"> Apple </Radio>
@@ -193,10 +194,11 @@ class AntDForm extends Component {
                   Submit
                 </Button>
               </Form.Item>
-            </Col>
+           
             {/* <Col xs={24} sm={12} md={10} lg={3} >XS=24, SM=12, MD=6, LG=6</Col>
             <Col xs={24} sm={12} md={10} lg={3} >XS=24, SM=12, MD=6, LG=6</Col> */}
           </Form>
+          </Col>
         </Row>
       </>
     );

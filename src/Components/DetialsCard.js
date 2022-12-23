@@ -1,7 +1,6 @@
  import axios from "axios";
 import { Component } from "react";
-import { Row, Col, Card  } from "antd";
-import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
+import { Row, Col, Card  } from "antd";   
     class DetialsCard extends Component{
         constructor(){
             super();
@@ -10,15 +9,16 @@ import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
                 dataTitle:'',
                 dataBody:''
             };
+           
         } 
+        
     
         getApi = () =>{
-            axios.get('https://jsonplaceholder.typicode.com/posts/20').
-            then((res)=>{  
-                    console.log(res)
-                    console.log(res.data.userId)
+            const cardId=window.location.href.split('/')[4];
+            axios.get('https://jsonplaceholder.typicode.com/posts/'+cardId).
+            then((res)=>{   
                     this.setState({                    
-                        dataId:res.data.userId ,
+                        dataId:res.data.id ,
                         dataTitle:res.data.title ,
                         dataBody:res.data.body ,
                     }) 
@@ -32,20 +32,26 @@ import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
 
         componentDidMount() {
             this.getApi();
+            console.log("componentDidMount")
           }
 
+           
         render(){
             return (
                 <>
                 
-                
-                 <h4>Get Api On Button CLick</h4>
-                        <button onClick={this.getApi}>Click To Fetch</button>
-
-                        Id : {this.state.dataId}<br />
-                        Title :  {this.state.dataTitle}<br />
+                <Row>
+                    <Col sm={24}>
+                        <Card> 
+                    Id : {this.state.dataId}<br />
+                    Title :  {this.state.dataTitle}<br />
                         Body :  {this.state.dataBody}<br/>
+                        </Card>
+                    </Col>
+                </Row>
+         
                 </>
+                
             )
         }
     }

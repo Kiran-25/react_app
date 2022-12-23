@@ -1,105 +1,106 @@
  
 import './App.css'; 
-// import Profile from './Components/Profile';
+import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
+ import Profile from './Components/Profile';
 // import Message from './Components/Message'
-//  import Counter from './Components/Counter';
-// import MesgClass from './Components/MesgClass';
+ import Counter from './Components/Counter';
+ import MesgClass from './Components/MesgClass';
 // import MesgFun from './Components/MesgFun'
-
-// import EventFun from './Components/EventFun'
-
-//import EventClass from './Components/EventClass';
-
-// import data from './data.json';
-// import FetchJsonData from './Components/FetchJsonData';
- //import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
-  // import SimpleForm from './Components/SimpleForm'; 
-// import AntD from './Components/AntD';
-//import UseStateHook from './Components/UseStateHook'
-//import BootstrapForm from './Components/BootstrapForm';
- //import AntDForm from './Components/AntDForm';
-//import GetApi from './Components/GetApi'
- //import Temp from './Components/Temp';
+ import EventFun from './Components/EventFun'
+ import EventClass from './Components/EventClass'; 
+ import FetchJsonData from './Components/FetchJsonData';
+// import SimpleForm from './Components/SimpleForm';  
+import UseStateHook from './Components/UseStateHook'
+ import BootstrapForm from './Components/BootstrapForm';
+ import AntDForm from './Components/AntDForm';
+import GetApi from './Components/GetApi' 
+// import FunctionComponent from './Components/FunctionComponent';
+// import ClassComponent from './Components/ClassComponent';
 import DetialsCard from './Components/DetialsCard'
+ import PostApi from './Components/PostApi' 
+ import Home from './Components/Home';
+import {Layout, Button } from 'antd';
+const { Header,  Content } = Layout;
+
+
 function App() {
 
   return (
 	 
-	<>
+	<> 
+		
 
 
+<Layout>
+<Router>
+      <Header> 
+		<ul style={{listStyle: 'none', display:'flex', gap:'5px'}}>
+		<Link to={"/" } ><li className='pl-2'><Button>Home</Button></li></Link>
+		<Link to={"/mesgProps" } ><li className='pl-2'><Button>Pops - Class</Button></li></Link>
+		<Link to={"/counter_state" } ><li className='pl-2'><Button>Counter : state</Button></li></Link>
+		<Link to={"/clickEvent" } ><li className='pl-2'><Button>Click Event</Button></li></Link>
+		<Link to={"/bootstrap_form" }><li className='pl-2'><Button>BootStrap Form</Button></li></Link>
+		<Link to={"/antd_form" } ><li className='pl-2'><Button>AntD Form</Button></li></Link>
+		<Link to={"/fetch_json_data" } ><li className='pl-2'><Button>Fetch Json Data</Button></li></Link>		
+		<Link to={"/fetch_api" } ><li className='pl-2'><Button>API - Fetch</Button></li></Link>
+		<Link to={"/post_api" } ><li className='pl-2'><Button>API - Post</Button></li></Link>
+		
+		{/* <Link to={"/fEvent" } ><li className='pl-2'><Button>F - Event</Button></li></Link> */}
+		<Link to={"/fprops_child" } ><li className='pl-2'><Button>F - Props with Child</Button></li></Link>
+		<Link to={"/fuseState" } ><li className='pl-2'><Button>F - UseState</Button></li></Link>
 
-< DetialsCard />
- 
+		
+		
+		</ul> 
 
-	{/* < GetApi />
- 
+	  </Header>
+      <Content className='p-5'>
+	 
+	  <Routes>
+	  <Route path="/" element={< Home />} />
+		<Route path="/details/:id" element={< DetialsCard  />} />
+		<Route path="/fetch_api" element={< GetApi />} />
+		<Route path="/post_api" element={< PostApi />} />
+		<Route path="/bootstrap_form" element={< BootstrapForm />} />
+		<Route path="/antd_form" element={< AntDForm />} />
+		<Route path="/fetch_json_data" element={< FetchJsonData />} />
+		<Route path="/counter_state" element={< Counter />} />
+		<Route path="/mesgProps" element={< MesgClass  fname="Test" lname="Name"/>} />
+		<Route path="/clickEvent" element={< EventClass />} />
+		<Route path="/fEvent" element={< EventFun />} />
+		<Route path="/fprops_child" element={< Profile  userName="John" > <h6>This is Child Data</h6></Profile> } />
+		<Route path="/fuseState" element={< UseStateHook /> } />
 
-	<Router>
-			<Routes> 
-			<Route  path='/DetialsCard/:id' element={< DetialsCard />}></Route>
-			</Routes>
-	</Router> */}
-	</>
-	//<AntDForm />
-	//<BootstrapForm />
-	//<SimpleForm />
-	//<UseStateHook />
-    // <Router>
-	// 	<div >
-	// 		<ul className=" ">
-	// 		<li>
-	// 			<Link to="/">Ant D</Link>
-	// 		</li>
-	// 		<li>
-	// 			<Link to="/SimpleForm">SimpleForm</Link>
-	// 		</li>
-		 
-	// 		</ul>
-	// 	<Routes>
-	// 			<Route exact path='/' element={< AntD />}></Route>
-	// 			<Route exact path='/SimpleForm' element={< SimpleForm />}></Route> 
-	// 	</Routes>
-	// 	</div>
-	// </Router>
-  )
-//   return (
-//     <div className="App"> 
-//     {
+		
+	</Routes> 
+	
 
 
+	  </Content> 
+	  </Router>
+    </Layout>
 
-// <AntD />
-//       // <SimpleForm />
-//       // <FetchJsonData />
 
-//       // data && data.map(result=>{
-//       //   return (
-//       //     <div key={result.id}> 
-//       //     <p>{result.id} - {result.name}</p>
-          
-//       //     {
-//       //       result.stream && result.stream.map(streamData=>{
-//       //         return (
-//       //           <div key={result.id}>{streamData.content}</div>
-//       //         )
-//       //       })
-//       //     }
-//       //     </div>
-
-//       //   )
-//       // })
-//       // <EventClass />
-//       // <EventFun />
-//       // <MesgClass fname="daya" lname="jd" />
-
-//       // <MesgFun  fname="daya" lname="jd" />
-//       // <Counter />
-//       // <Message messageCode='20' />
-    
-//     /* <Profile userName="TestName" > <h5>Child Data</h5></Profile> */}
-//     </div>
-//   );
+		{/* Class Based Component */}
+		{/* <ClassComponent />
+		< GetApi />
+		< DetialsCard />
+		<AntDForm />
+		<BootstrapForm />
+		<FetchJsonData />
+		<EventClass />
+		<MesgClass fname="Test" lname="Name" />
+		<Message messageCode='20' />
+		<Counter /> 
+		<PostApi />*/}
+		{/* Function Based Component */}
+		{/* <FunctionComponent />		
+		<EventFun />		
+		<MesgFun  fname="Test" lname="Name" />		    
+		<Profile userName="TestName" > <h5>Child Data</h5></Profile>
+		<UseStateHook />   */}
+	</> 
+  ) 
 }
 
 export default App;

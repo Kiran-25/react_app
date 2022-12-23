@@ -4,8 +4,8 @@ class MesgClass extends Component{
     render(){
         const {fname,lname} = this.props;
         return <div>
-            <p>Fname : {this.props.fname} {this.props.lname}</p>
-            <p>Fname : {fname} {lname}</p>
+            <p>First name : {this.props.fname} </p>
+            <p>Last Name : {lname}</p>
         </div>
     }
 }
