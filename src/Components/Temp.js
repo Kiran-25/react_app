@@ -5,7 +5,7 @@ import SimpleForm from './SimpleForm';
 
 class Temp extends Component{
     render(){
-        return <h2>Temp </h2>
+        return <h2>jgjj </h2>
     }
 }
 
