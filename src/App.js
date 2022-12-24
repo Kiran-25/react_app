@@ -21,9 +21,8 @@ const { Header,  Content } = Layout;
 function App() {
 
   return (	 
-	<>  
-	<Home />
-	{/* <Layout>
+	<>   
+	<Layout>
 	<Router>
 		<Header> 
 			<ul style={{listStyle: 'none', display:'flex', gap:'5px'}}>
@@ -59,7 +58,7 @@ function App() {
 			</Routes> 
 		</Content> 
 		</Router>
-		</Layout>  */}
+		</Layout> 
 	</> 
   ) 
 }

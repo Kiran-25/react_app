@@ -15,8 +15,8 @@ import { Row, Col, Card  } from "antd";
     
         getApi = () =>{
             const cardId=window.location.href.split('/')[4];
-            axios.get('https://jsonplaceholder.typicode.com/posts/'+cardId).
-            then((res)=>{   
+            axios.get('https://jsonplaceholder.typicode.com/posts/'+cardId)
+            .then((res)=>{   
                     this.setState({                    
                         dataId:res.data.id ,
                         dataTitle:res.data.title ,

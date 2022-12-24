@@ -13,13 +13,13 @@ class GetApi extends Component{
     } 
 
     getApi = () =>{
-        axios.get('https://jsonplaceholder.typicode.com/posts').
-        then((res)=>{  
-            res.data.map(intData=>{ 
+        axios.get('https://jsonplaceholder.typicode.com/posts')
+        .then((res)=>{  
+            res.data.map(intData=>
                 this.setState(res=>({                    
                     dataApi:[...res.dataApi, {"id":intData.id,'title':intData.title, "body":intData.body}] ,
                 })) 
-            })                
+            )                
         }).catch(err=>{
             console.log(err)
         })

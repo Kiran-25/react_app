@@ -11,7 +11,7 @@ const UseStateHook = () => {
     });
 
     const onDecClick = () =>{
-        UpdateCurrentCount (pre=> pre != 0 ? pre - 1: pre);
+        UpdateCurrentCount (pre=> pre !== 0 ? pre - 1: pre);
     }
     return (
         <>
