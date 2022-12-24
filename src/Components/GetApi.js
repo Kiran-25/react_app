@@ -1,7 +1,7 @@
 import { Component } from "react";
-import { Row, Col, Card  } from "antd";
+import { Row, Col, Card, Button  } from "antd";
 import axios from "axios";
-import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
+import {  Link } from 'react-router-dom';
 
 class GetApi extends Component{
     constructor(){
@@ -28,12 +28,11 @@ class GetApi extends Component{
         return (
             <>
             <Row className="m-0" gutter={[8,8]}>  
-                <Col sm={24} type="flex" align="left">
-                    <h4>Get Api On Button CLick</h4>
-                    <button onClick={this.getApi}>Click To Fetch</button>
+                <Col sm={24} type="flex" align="left"> 
+                <Button type="primary" onClick={this.getApi}>Fetch Cards</Button>
                 </Col>
                     {this.state.dataApi.map(resp => 
-                    resp.id ?<Col  key={resp.id}  sm={12} md={8}><Card  style={{height: '100%'}} title={resp.title} extra={<Router><Link  to={`/DetialsCard/${resp.id}`} >Detials</Link></Router>}  > <p>{resp.body}</p> </Card> </Col>:''
+                    resp.id ?<Col  key={resp.id}  sm={12} md={8}><Card  style={{height: '100%'}} title={resp.title}   > <p>{resp.body}</p> <Link to={"/details/"+resp.id }>Read More</Link> </Card> </Col>:''
  
             )}
             </Row>

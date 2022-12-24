@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Button } from "antd";
 
  
 
@@ -15,7 +16,7 @@ class EventClass extends Component{
         
         return (
             <div>
-                <button onClick={this.clickEventHnadle}>Click Event</button>
+                <Button type="primary" onClick={this.clickEventHnadle}>Click Event </Button>
             </div>
         )
     }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "antd";
 
 const UseStateHook = () => {
     const onAddClick =() =>{       
@@ -10,14 +11,14 @@ const UseStateHook = () => {
     });
 
     const onDecClick = () =>{
-        UpdateCurrentCount (pre=> pre!=0?pre - 1: pre);
+        UpdateCurrentCount (pre=> pre != 0 ? pre - 1: pre);
     }
     return (
         <>
     <h2>Use State Hook works</h2>
-    <button onClick={onAddClick}>Add</button>
-    Count is : {currentCount}
-    <button onClick={onDecClick}>Minus</button>
+    <Button type="primary" onClick={onAddClick}>Add</Button>
+    &nbsp; Count is : {currentCount} &nbsp;
+    <Button type="primary" onClick={onDecClick}>Minus</Button>
     </>
     )
 }
