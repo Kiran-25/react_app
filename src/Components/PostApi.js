@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Row, Col, Card } from "antd";
+import { Row, Col, Card, Button } from "antd";
 import axios from "axios";
 
 class PostApi extends Component{
@@ -28,7 +28,7 @@ class PostApi extends Component{
                     <Col sm={12} >
                         <Card>
                         <h4 >Post Api Call</h4>
-                        <button onClick={this.postAPI}>Click On Post API</button>
+                        <Button type="primary" onClick={this.postAPI}>Click On Post API</Button>
                         </Card>
                     </Col>
                 </Row>

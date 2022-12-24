@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Button } from "antd";
 
 class Counter extends Component{
 
@@ -35,9 +36,9 @@ class Counter extends Component{
         return (
             <div>
             <h5>Counter Value is : {this.state.count}</h5>
-            <button onClick={this.increment}>Increment Counter</button>
-            <button onClick={this.incrementByTwo}>Increment Counter by 2</button>
-            <button onClick={this.decrement}>Decrement Counter</button>
+            <Button type="primary" style={{marginRight:'5px'}} onClick={this.increment} >Increment Counter </Button>
+            <Button type="primary" style={{marginRight:'5px'}}  onClick={this.incrementByTwo}>Increment Counter by 2</Button>
+            <Button type="primary" style={{marginRight:'5px'}} onClick={this.decrement}>Decrement Counter</Button>
             </div>
         )
     }
