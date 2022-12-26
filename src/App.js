@@ -15,6 +15,8 @@ import DetialsCard from './Components/DetialsCard';
  import PostApi from './Components/PostApi';
  import Home from './Components/Home';
 import {Layout, Button } from 'antd';
+import Parent from './Components/Parent';
+import Child from './Components/Child';
 const { Header,  Content } = Layout;
 
 
@@ -22,7 +24,8 @@ function App() {
 
   return (	 
 	<>   
-	<Layout>
+	<Parent /> 
+	{/* <Layout>
 	<Router>
 		<Header> 
 			<ul style={{listStyle: 'none', display:'flex', gap:'5px'}}>
@@ -58,7 +61,7 @@ function App() {
 			</Routes> 
 		</Content> 
 		</Router>
-		</Layout> 
+		</Layout>  */}
 	</> 
   ) 
 }
