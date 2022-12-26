@@ -1,18 +1,13 @@
  
 
-const CommonService = (parm) =>{
-    return parm*parm;
-};
+const CommonService = {
+    addition: function(parm) {
+        return parm+parm;
+    },
 
-// const anotherService = (parm) =>{
-//     return parm+parm;
-// }
-
-// class CommonService {
-
-//     run(params) {
-//         return params;
-//     }
-// }
- 
+    multiplication: function(parm) {
+        return parm*parm;
+    }
+}
+  
 export default CommonService

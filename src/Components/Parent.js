@@ -1,24 +1,26 @@
 import React, { Component } from "react";
-import Child from "./Child";
+
+import Child from './Child'
 
 class Parent extends Component{
-  
-    constructor(props){
-        super(props);
+    constructor(){
+        super();
         this.Child=React.createRef();
     }
 
-    onClickChild  = () =>{
+    childEventRun= () =>{
         this.Child.current.getAlert();
-    };
+    }
+
     render(){
         return(
             <>
-            <p> Parent Component</p>
-            <button onClick={this.onClickChild}>Access Child Function</button>
+            <p>Parent Component</p>
+            <button onClick={this.childEventRun}>Access Child Event from Parent Button Click</button>
             <Child ref={this.Child} />
+           
             </>
-        )    
+        )
     }
 }
 

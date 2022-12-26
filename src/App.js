@@ -17,14 +17,17 @@ import DetialsCard from './Components/DetialsCard';
 import {Layout, Button } from 'antd';
 import Parent from './Components/Parent';
 import Child from './Components/Child';
+import Parents2 from './Components/Parents2';
+import ServiceUse from './Components/ServiceUse';
 const { Header,  Content } = Layout;
 
 
 function App() {
 
   return (	 
-	<>   
-	<Parent /> 
+	<>  
+	< ServiceUse />
+	{/* <Parent />  */}
 	{/* <Layout>
 	<Router>
 		<Header> 
