@@ -19,15 +19,28 @@ import Parent from './Components/Parent';
 import Child from './Components/Child';
 import Parents2 from './Components/Parents2';
 import ServiceUse from './Components/ServiceUse';
+import Temp from './Components/Temp'
+import AutoLogOut from './Components/AutoLogOut';
+import  MesgFun  from './Components/MesgFun';
+
 const { Header,  Content } = Layout;
+
+
 
 
 function App() {
 
   return (	 
-	<>  
-	< ServiceUse />
-	{/* <Parent />  */}
+	<>   
+	<Home />
+
+	{/* <MesgFun /> */}
+
+	{/* <AutoLogOut /> */}
+
+	{/* <Temp /> */}
+	{/* < ServiceUse />
+	<Parent />  */}
 	{/* <Layout>
 	<Router>
 		<Header> 
