@@ -1,4 +1,6 @@
 import { IdleTimerProvider, useIdleTimerContext } from 'react-idle-timer'
+import React from "react";
+const {useState } = React;
 
 const MesgFun =(props)=>{
     const idleTimer = useIdleTimerContext()
@@ -24,8 +26,19 @@ const MesgFun =(props)=>{
         // Do something when a user triggers a watched event
       }
 
+      const [checked, setChecked] = useState(false);
+      const toggleChecked = () => setChecked(value => !value);
+
 
 return <div>
+
+  {console.log(checked)}
+
+<input
+      type="checkbox"
+      checked={checked}
+      onChange={toggleChecked}
+    />
     <p>Name : {props.fname} - {props.lname}</p>
     <p>Name Using Des : {fname} - {lname}</p>
     <IdleTimerProvider
